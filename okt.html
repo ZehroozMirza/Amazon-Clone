@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon- Mobile & Electronics Store</title>
+    <style>
+    *{
+  margin:0;
+  font-family: arial;
+  border : border-box ;
+  text-decoration: none;
+}
+.navbar {
+  height: 60px;
+  background-color: #0F1111;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+} 
+.nav-logo{
+  height: 50px;
+  width: 100px;
+  
+}
+
+.logo {
+  background-image: url(amazon_logo.png);
+  background-size: cover;
+  height: 30px;
+  width: 100%; 
+  margin-top: 12px;
+}
+.border {
+  border:2px solid transparent;
+  
+}
+.border:hover {
+  border:1.5px solid white;
+}
+
+.add-first{
+  
+  color: #cccccc;
+ font-size: 0.80rem;
+ margin-left: 15px;
+}
+  
+.add-second{
+ font-size: 1rem;
+ margin-left: 3px;
+  
+}
+.add-icon {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search{
+  justify-content: space-evenly;
+  display: flex;
+  background-color: pink;
+  width:620px;
+  height: 40px;
+  border-radius: 4px;
+} 
+.search-select {
+  background-color:#F3F3F3;
+  width: 50px;
+  text-align: center;
+border-top-left-radius: 4px;
+border-bottom-left-radius: 4px;
+border:none;
+}
+
+.search-input {
+  width: 100%;
+  font-size: 1rem;
+  border:none;
+  
+}
+.search-icon {
+  width: 45px;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  font-size:1.2rem;
+  background-color:rgba(231, 191, 47, 1);
+  border-top-right-radius: 4px;
+border-bottom-right-radius: 4px;
+color: #0F1111;
+}
+
+/** box 4 **/
+
+span {
+  font-size: 0.7rem
+}
+
+.nav-second {
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.nav-search:hover{
+  border :2px solid rgba(231, 191, 47, 1)
+}
+
+.nav-cart  {
+  
+  font-size: 0.85rem;
+  font-weight: 700;
+  
+}
+        
+       .search-bar button {
+            background-color: #febd69;
+            border: none;
+            padding: 0 10px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        
+        .cart {
+            margin-left: 15px;
+            font-size: 24px;
+        }
+        
+        .category-nav {
+            background-color: #232f3e;
+            padding: 8px 15px;
+            display: flex;
+            color: white;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .category-nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+            font-size: 14px;
+        }
+        
+        .banner {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(135deg, #00b3e3, #4b286d);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px;
+        }
+        
+        .filters {
+            background-color: white;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .filters h3 {
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-pill {
+            background-color: #f0f2f2;
+            border: 1px solid #d5d9d9;
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        
+        .filter-pill:hover {
+            background-color: #e7e9ec;
+        }
+        
+        .section-heading {
+            font-size: 22px;
+            margin: 15px 0;
+            color: #111;
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        @media (min-width: 600px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .product-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: relative;
+            margin-bottom: 15px;
+            transition: transform 0.2s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .prime-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 11px;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+        
+        .product-image {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            background-color: #f8f8f8;
+        }
+        
+        .product-image img {
+            max-width: 100%;
+            max-height: 160px;
+            object-fit: contain;
+        }
+        
+        .product-info {
+            padding: 10px;
+        }
+        
+        .product-title {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #0066c0;
+            line-height: 1.3;
+            height: 36px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .product-brand {
+            font-size: 12px;
+            color: #565959;
+            margin-bottom: 5px;
+        }
+        
+        .rating {
+            color: #febd69;
+            font-size: 12px;
+            margin-top: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .rating-count {
+            color: #565959;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #111;
+            margin-top: 5px;
+        }
+        
+        .original-price {
+            font-size: 14px;
+            color: #565959;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #cc0c39;
+            color: white;
+            font-size: 12px;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+        
+        .special-offer {
+            font-size: 12px;
+            color: #cc0c39;
+            margin-top: 5px;
+        }
+        
+        .add-to-cart {
+            background-color: #ffd814;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 10px;
+            width: 100%;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .buy-now {
+            background-color: #ff9900;
+            border: none;
+            border-radius: 20px;
+            padding: 6px 10px;
+            width: 100%;
+            margin-top: 5px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        
+        .sponsored-products {
+            margin-top: 30px;
+        }
+        
+        .sponsored-heading {
+            font-size: 16px;
+            color: #565959;
+            margin-bottom: 15px;
+        }
+        
+        .sponsored-row {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding-bottom: 15px;
+        }
+        
+        .sponsored-item {
+            min-width: 150px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+        
+        .sponsored-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: contain;
+        }
+        
+        .sponsored-price {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        
+        footer {
+            background-color: #232f3e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 12px;
+        }
+        
+        .back-to-top {
+            background-color: #37475a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        
+        .back-to-top:hover {
+            background-color: #485769;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      
+      <div class="nav-logo border">
+    <div class="logo"></div>
+    
+      </div>
+      <div class="nav-address border">
+        
+      <p class="add-first"> Deliver to</p>
+      
+      <div class="add-icon">
+        
+       <img border= alt="logo" height="15px"width= "18px" src="location_icon.png">
+        <p class="add-second">India </p>
+      </div>
+      </div>
+      <div class="nav-search">
+        
+      <select class="search-select">
+        
+        <option> All</option>
+      </select>
+      
+      <input placeholder="Search Amazon" class="search-input">
+      
+      <div class="search-icon">
+      
+           <img border= alt="logo" height="18px"width= "18px" src="search_icon.png">
+           </div>
+      </div>
+    <div class="nav-singin border">
+      <p> <span>Hell, Sign in</span></p>
+      <p class="nav-second"> Accounts & List</p>
+    </div>
+    
+   <div class="nav-return border">
+      <p> <span>Return</span></p>
+      <p class="nav-second">& Orders</p>
+    </div>
+  
+  <div class="nav-cart border">
+    <img border= alt="logo" height="25px"width= "30px" src="cart_icon.png">
+    <p class=nav-cart >Cart</p>
+    
+    </div>
+    </div>
+    <div class="panel">
+    <div class="panel-all">
+       <img border= alt="logo" height="18px"width= "18px" src="menu_icon.png">
+      
+  
+    </div>
+    </header>
+    
+    <div class="banner">
+        End of Season Sale! Up to 40% Off on Flagship Phones
+    </div>
+    
+    <main>
+        <div class="filters">
+            <h3>Quick Filters</h3>
+            <div class="filter-options">
+            <div class="filter-pill">Under ₹15,000</div>
+            <div class="filter-pill">Premium (₹30,000+)</div>
+               <div class="filter-pill">5G Ready</div>
+            <div class="filter-pill">Latest Models</div>
+             <div class="filter-pill">High Camera Specs</div>
+                <div class="filter-pill">Fast Charging</div>
+                <div class="filter-pill">Top Rated</div>
+            </div>
+        </div>
+        
+        <h2 class="section-heading">Best Selling Smartphones</h2>
+        
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="discount-badge">-25%</div>
+                <div class="prime-tag">Prime</div>
+                <div class="product-image">
+                    <img src="download11.jpg" alt="Smartphone X">
+                </div>
+                <div class="product-info">
+            <div class="product-brand">iPhone</div>
+                    <div class="product-title">iPhone 16e (8GB RAM, 128GB Storage) - Ocean Blue</div>
+                  <div class="rating">★★★★★ <span class="rating-count">(3,421)</span></div>
+                    <div class="product-price">₹29,999 <span class="original-price">₹39,999</span></div>
+                    <div class="special-offer">10% off with Bank Offers</div>
+                <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="discount-badge">-18%</div>
+                <div class="product-image">
+                    <img src="download.jpg" alt="Smartphone Y">
+                </div>
+                <div class="product-info">
+           <div class="product-brand">GalaxyTech</div>
+                    <div class="product-title">Galaxy S21 FE 5G (6GB RAM, 128GB) - Graphite Black</div>
+            <div class="rating">★★★★☆ <span class="rating-count">(2,187)</span></div>
+                    <div class="product-price">₹34,999 <span class="original-price">₹42,999</span></div>
+                    <div class="special-offer">Free Earbuds worth ₹2,999</div>
+           <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="prime-tag">Prime</div>
+                <div class="product-image">
+                    <img src="hex2.jpg" alt="Smartphone Z">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Pixel</div>
+         <div class="product-title">Pixel 6a (6GB RAM, 128GB) - Sage Green</div>
+                 <div class="rating">★★★★★ <span class="rating-count">(1,845)</span></div>
+               <div class="product-price">₹27,999</div>
+                    <div class="special-offer">EMI starts at ₹1,319/month</div>
+         <button class="add-to-cart">Add to Cart</button>
+                <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="product-card">
+            <div class="discount-badge">-32%</div>
+                    <div class="prime-tag">Prime</div>
+                <div class="product-image">
+                    <img src="hex4.jpg" alt="Smartphone A">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">RedmiNote</div>
+               <div class="product-title">Note 11 Pro+ 5G (8GB RAM, 256GB) - Mirage Blue</div>
+                    <div class="rating">★★★★☆ <span class="rating-count">(9,432)</span></div>
+                <div class="product-price">₹19,999 <span class="original-price">₹29,499</span></div>
+                    <div class="special-offer">Exchange offer up to ₹5,000</div>
+                    <button class="add-to-cart">Add to Cart</button>
+                  <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="product-card">
+             <div class="discount-badge">New Launch</div>
+                <div class="product-image">
+                    <img src="hex5.jpg" alt="Smartphone B">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">OnePlus</div>
+               <div class="product-title">OnePlus 11R 5G (12GB RAM, 256GB) - Galactic Silver</div>
+                <div class="rating">★★★★★ <span class="rating-count">(746)</span></div>
+                    <div class="product-price">₹44,999</div>
+                    <div class="special-offer">Launch offer: Free OnePlus Buds</div>
+                 <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="product-card">
+            <div class="prime-tag">Prime</div>
+                <div class="product-image">
+                    <img src="hex6.jpg" alt="Smartphone C">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">iPhony</div>
+             <div class="product-title">iPhony 14 (128GB) - Midnight - With AppleCare+</div>
+                    <div class="rating">★★★★★ <span class="rating-count">(12,547)</span></div>
+                    <div class="product-price">₹79,900</div>
+              <div class="special-offer">Up to ₹20,000 off with exchange</div>
+                    <button class="add-to-cart">Add to Cart</button>
+              <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 7 -->
+            <div class="product-card">
+                <div class="discount-badge">-15%</div>
+                <div class="product-image">
+                    <img src="hex7.jpg" alt="Smartphone D">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Vivo</div>
+             <div class="product-title">Vivo V27 Pro (8GB RAM, 128GB) - Magic Blue</div>
+                    <div class="rating">★★★★☆ <span class="rating-count">(3,822)</span></div>
+                 <div class="product-price">₹32,999 <span class="original-price">₹38,999</span></div>
+                    <div class="special-offer">No-cost EMI available</div>
+                <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+            
+            <!-- Product 8 -->
+            <div class="product-card">
+                <div class="discount-badge">-22%</div>
+                <div class="prime-tag">Prime</div>
+                <div class="product-image">
+                    <img src="hex8.jpg" alt="Smartphone E">
+                </div>
+                <div class="product-info">
+                    <div class="product-brand">Samsung</div>
+          <div class="product-title">Samsung Galaxy M53 5G (6GB RAM, 128GB) - Deep Blue</div>
+                    <div class="rating">★★★★☆ <span class="rating-count">(5,673)</span></div>
+               <div class="product-price">₹22,999 <span class="original-price">₹29,499</span></div>
+                    <div class="special-offer">Extra 5% off with coupons</div>
+          <button class="add-to-cart">Add to Cart</button>
+                    <button class="buy-now">Buy Now</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sponsored-products">
+            <h3 class="sponsored-heading">Sponsored Products related to this category</h3>
+            <div class="sponsored-row">
+                <div class="sponsored-item">
+                    <img src="Z3.jpg" alt="Accessory 1">
+                    <div class="product-title">Premium Tempered Glass Screen Protector</div>
+                    <div class="sponsored-price">₹499</div>
+                </div>
+            <div class="sponsored-item">
+                    <img src="Z4.jpg" alt="Accessory 2">
+              <div class="product-title">Fast Charging Cable (Type-C)</div>
+                    <div class="sponsored-price">₹349</div>
+                </div>
+                <div class="sponsored-item">
+                    <img src="Z2.jpg" alt="Accessory 3">
+              <div class="product-title">Designer Phone Case</div>
+                    <div class="sponsored-price">₹699</div>
+                </div>
+                <div class="sponsored-item">
+                    <img src="Z.jpg" alt="Accessory 4">
+                    <div class="product-title">20W Power Adapter</div>
+                    <div class="sponsored-price">₹899</div>
+                </div>
+                <div class="sponsored-item">
+                    <img src="Z1.jpg" alt="Accessory 5">
+              <div class="product-title">Wireless Earbuds Pro</div>
+                    <div class="sponsored-price">₹2,499</div>
+              </div>
+            </div>
+             </div>
+            </main>
+    
+    <div class="back-to-top">
+        THANK-YOU 
+    </div>
+    
+    <footer>
+        
