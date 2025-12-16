@@ -1,0 +1,26 @@
+name: Static Site CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Validate HTML files
+        run: |
+          echo "Checking HTML files"
+          ls *.html
+
+      - name: Validate CSS files
+        run: |
+          echo "Checking CSS files"
+          ls *.css
+
+      - name: CI completed
+        run: echo "Static site CI passed"
