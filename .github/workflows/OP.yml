@@ -1,0 +1,33 @@
+name: Static Site CI
+
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@v7
+        with:
+          root: .
+
+      - name: INSTALL LINTCSS
+        run: npm install -g stylelint stylelint-config-standard
+
+      - name: Lint CSS
+        run: stylelint "**/*.css"
+
+      - name: Security check
+        run: |
+          if ls *.env 2>/dev/null; then exit 1; fi
+
+      - name: CI success
+        run: echo "Indusstry-grade CI passed" 
