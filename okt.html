@@ -8,7 +8,7 @@
     *{
   margin:0;
   font-family: arial;
-  border : border-box ;
+  box-sizing: border-box;
   text-decoration: none;
 }
 .navbar {
@@ -433,253 +433,243 @@ span {
     <div class="navbar">
       
       <div class="nav-logo border">
-    <div class="logo"></div>
-    
+        <div class="logo"></div>
       </div>
       <div class="nav-address border">
-        
-      <p class="add-first"> Deliver to</p>
-      
-      <div class="add-icon">
-        
-       <img border= alt="logo" height="15px"width= "18px" src="location_icon.png">
-        <p class="add-second">India </p>
-      </div>
+        <p class="add-first">Deliver to</p>
+        <div class="add-icon">
+          <img src="location_icon.png" alt="Location" height="15" width="18">
+          <p class="add-second">India</p>
+        </div>
       </div>
       <div class="nav-search">
-        
-      <select class="search-select">
-        
-        <option> All</option>
-      </select>
-      
-      <input placeholder="Search Amazon" class="search-input">
-      
-      <div class="search-icon">
-      
-           <img border= alt="logo" height="18px"width= "18px" src="search_icon.png">
-           </div>
+        <select class="search-select">
+          <option>All</option>
+        </select>
+        <input placeholder="Search Amazon" class="search-input">
+        <div class="search-icon">
+          <img src="search_icon.png" alt="Search" height="18" width="18">
+        </div>
       </div>
-    <div class="nav-singin border">
-      <p> <span>Hell, Sign in</span></p>
-      <p class="nav-second"> Accounts & List</p>
-    </div>
-    
-   <div class="nav-return border">
-      <p> <span>Return</span></p>
-      <p class="nav-second">& Orders</p>
-    </div>
-  
-  <div class="nav-cart border">
-    <img border= alt="logo" height="25px"width= "30px" src="cart_icon.png">
-    <p class=nav-cart >Cart</p>
-    
-    </div>
+      <div class="nav-singin border">
+        <p><span>Hell, Sign in</span></p>
+        <p class="nav-second">Accounts & List</p>
+      </div>
+      <div class="nav-return border">
+        <p><span>Return</span></p>
+        <p class="nav-second">& Orders</p>
+      </div>
+      <div class="nav-cart border">
+        <img src="cart_icon.png" alt="Cart" height="25" width="30">
+        <p class="nav-cart">Cart</p>
+      </div>
     </div>
     <div class="panel">
-    <div class="panel-all">
-       <img border= alt="logo" height="18px"width= "18px" src="menu_icon.png">
-      
-  
+      <div class="panel-all">
+        <img src="menu_icon.png" alt="Menu" height="18" width="18">
+      </div>
     </div>
-    </header>
+  </header>
     
-    <div class="banner">
-        End of Season Sale! Up to 40% Off on Flagship Phones
+  <div class="banner">
+    End of Season Sale! Up to 40% Off on Flagship Phones
+  </div>
+    
+  <main>
+    <div class="filters">
+      <h3>Quick Filters</h3>
+      <div class="filter-options">
+        <div class="filter-pill">Under ₹15,000</div>
+        <div class="filter-pill">Premium (₹30,000+)</div>
+        <div class="filter-pill">5G Ready</div>
+        <div class="filter-pill">Latest Models</div>
+        <div class="filter-pill">High Camera Specs</div>
+        <div class="filter-pill">Fast Charging</div>
+        <div class="filter-pill">Top Rated</div>
+      </div>
     </div>
-    
-    <main>
-        <div class="filters">
-            <h3>Quick Filters</h3>
-            <div class="filter-options">
-            <div class="filter-pill">Under ₹15,000</div>
-            <div class="filter-pill">Premium (₹30,000+)</div>
-               <div class="filter-pill">5G Ready</div>
-            <div class="filter-pill">Latest Models</div>
-             <div class="filter-pill">High Camera Specs</div>
-                <div class="filter-pill">Fast Charging</div>
-                <div class="filter-pill">Top Rated</div>
-            </div>
+        
+    <h2 class="section-heading">Best Selling Smartphones</h2>
+        
+    <div class="product-grid">
+      <!-- Product 1 -->
+      <div class="product-card">
+        <div class="discount-badge">-25%</div>
+        <div class="prime-tag">Prime</div>
+        <div class="product-image">
+          <img src="download11.jpg" alt="Smartphone X">
         </div>
-        
-        <h2 class="section-heading">Best Selling Smartphones</h2>
-        
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product-card">
-                <div class="discount-badge">-25%</div>
-                <div class="prime-tag">Prime</div>
-                <div class="product-image">
-                    <img src="download11.jpg" alt="Smartphone X">
-                </div>
-                <div class="product-info">
-            <div class="product-brand">iPhone</div>
-                    <div class="product-title">iPhone 16e (8GB RAM, 128GB Storage) - Ocean Blue</div>
-                  <div class="rating">★★★★★ <span class="rating-count">(3,421)</span></div>
-                    <div class="product-price">₹29,999 <span class="original-price">₹39,999</span></div>
-                    <div class="special-offer">10% off with Bank Offers</div>
-                <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 2 -->
-            <div class="product-card">
-                <div class="discount-badge">-18%</div>
-                <div class="product-image">
-                    <img src="download.jpg" alt="Smartphone Y">
-                </div>
-                <div class="product-info">
-           <div class="product-brand">GalaxyTech</div>
-                    <div class="product-title">Galaxy S21 FE 5G (6GB RAM, 128GB) - Graphite Black</div>
-            <div class="rating">★★★★☆ <span class="rating-count">(2,187)</span></div>
-                    <div class="product-price">₹34,999 <span class="original-price">₹42,999</span></div>
-                    <div class="special-offer">Free Earbuds worth ₹2,999</div>
-           <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 3 -->
-            <div class="product-card">
-                <div class="prime-tag">Prime</div>
-                <div class="product-image">
-                    <img src="hex2.jpg" alt="Smartphone Z">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">Pixel</div>
-         <div class="product-title">Pixel 6a (6GB RAM, 128GB) - Sage Green</div>
-                 <div class="rating">★★★★★ <span class="rating-count">(1,845)</span></div>
-               <div class="product-price">₹27,999</div>
-                    <div class="special-offer">EMI starts at ₹1,319/month</div>
-         <button class="add-to-cart">Add to Cart</button>
-                <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 4 -->
-            <div class="product-card">
-            <div class="discount-badge">-32%</div>
-                    <div class="prime-tag">Prime</div>
-                <div class="product-image">
-                    <img src="hex4.jpg" alt="Smartphone A">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">RedmiNote</div>
-               <div class="product-title">Note 11 Pro+ 5G (8GB RAM, 256GB) - Mirage Blue</div>
-                    <div class="rating">★★★★☆ <span class="rating-count">(9,432)</span></div>
-                <div class="product-price">₹19,999 <span class="original-price">₹29,499</span></div>
-                    <div class="special-offer">Exchange offer up to ₹5,000</div>
-                    <button class="add-to-cart">Add to Cart</button>
-                  <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 5 -->
-            <div class="product-card">
-             <div class="discount-badge">New Launch</div>
-                <div class="product-image">
-                    <img src="hex5.jpg" alt="Smartphone B">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">OnePlus</div>
-               <div class="product-title">OnePlus 11R 5G (12GB RAM, 256GB) - Galactic Silver</div>
-                <div class="rating">★★★★★ <span class="rating-count">(746)</span></div>
-                    <div class="product-price">₹44,999</div>
-                    <div class="special-offer">Launch offer: Free OnePlus Buds</div>
-                 <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 6 -->
-            <div class="product-card">
-            <div class="prime-tag">Prime</div>
-                <div class="product-image">
-                    <img src="hex6.jpg" alt="Smartphone C">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">iPhony</div>
-             <div class="product-title">iPhony 14 (128GB) - Midnight - With AppleCare+</div>
-                    <div class="rating">★★★★★ <span class="rating-count">(12,547)</span></div>
-                    <div class="product-price">₹79,900</div>
-              <div class="special-offer">Up to ₹20,000 off with exchange</div>
-                    <button class="add-to-cart">Add to Cart</button>
-              <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 7 -->
-            <div class="product-card">
-                <div class="discount-badge">-15%</div>
-                <div class="product-image">
-                    <img src="hex7.jpg" alt="Smartphone D">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">Vivo</div>
-             <div class="product-title">Vivo V27 Pro (8GB RAM, 128GB) - Magic Blue</div>
-                    <div class="rating">★★★★☆ <span class="rating-count">(3,822)</span></div>
-                 <div class="product-price">₹32,999 <span class="original-price">₹38,999</span></div>
-                    <div class="special-offer">No-cost EMI available</div>
-                <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
-            
-            <!-- Product 8 -->
-            <div class="product-card">
-                <div class="discount-badge">-22%</div>
-                <div class="prime-tag">Prime</div>
-                <div class="product-image">
-                    <img src="hex8.jpg" alt="Smartphone E">
-                </div>
-                <div class="product-info">
-                    <div class="product-brand">Samsung</div>
-          <div class="product-title">Samsung Galaxy M53 5G (6GB RAM, 128GB) - Deep Blue</div>
-                    <div class="rating">★★★★☆ <span class="rating-count">(5,673)</span></div>
-               <div class="product-price">₹22,999 <span class="original-price">₹29,499</span></div>
-                    <div class="special-offer">Extra 5% off with coupons</div>
+        <div class="product-info">
+          <div class="product-brand">iPhone</div>
+          <div class="product-title">iPhone 16e (8GB RAM, 128GB Storage) - Ocean Blue</div>
+          <div class="rating">★★★★★ <span class="rating-count">(3,421)</span></div>
+          <div class="product-price">₹29,999 <span class="original-price">₹39,999</span></div>
+          <div class="special-offer">10% off with Bank Offers</div>
           <button class="add-to-cart">Add to Cart</button>
-                    <button class="buy-now">Buy Now</button>
-                </div>
-            </div>
+          <button class="buy-now">Buy Now</button>
         </div>
-        
-        <div class="sponsored-products">
-            <h3 class="sponsored-heading">Sponsored Products related to this category</h3>
-            <div class="sponsored-row">
-                <div class="sponsored-item">
-                    <img src="Z3.jpg" alt="Accessory 1">
-                    <div class="product-title">Premium Tempered Glass Screen Protector</div>
-                    <div class="sponsored-price">₹499</div>
-                </div>
-            <div class="sponsored-item">
-                    <img src="Z4.jpg" alt="Accessory 2">
-              <div class="product-title">Fast Charging Cable (Type-C)</div>
-                    <div class="sponsored-price">₹349</div>
-                </div>
-                <div class="sponsored-item">
-                    <img src="Z2.jpg" alt="Accessory 3">
-              <div class="product-title">Designer Phone Case</div>
-                    <div class="sponsored-price">₹699</div>
-                </div>
-                <div class="sponsored-item">
-                    <img src="Z.jpg" alt="Accessory 4">
-                    <div class="product-title">20W Power Adapter</div>
-                    <div class="sponsored-price">₹899</div>
-                </div>
-                <div class="sponsored-item">
-                    <img src="Z1.jpg" alt="Accessory 5">
-              <div class="product-title">Wireless Earbuds Pro</div>
-                    <div class="sponsored-price">₹2,499</div>
-              </div>
-            </div>
-             </div>
-            </main>
-    
-    <div class="back-to-top">
-        THANK-YOU 
+      </div>
+            
+      <!-- Product 2 -->
+      <div class="product-card">
+        <div class="discount-badge">-18%</div>
+        <div class="product-image">
+          <img src="download.jpg" alt="Smartphone Y">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">GalaxyTech</div>
+          <div class="product-title">Galaxy S21 FE 5G (6GB RAM, 128GB) - Graphite Black</div>
+          <div class="rating">★★★★☆ <span class="rating-count">(2,187)</span></div>
+          <div class="product-price">₹34,999 <span class="original-price">₹42,999</span></div>
+          <div class="special-offer">Free Earbuds worth ₹2,999</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 3 -->
+      <div class="product-card">
+        <div class="prime-tag">Prime</div>
+        <div class="product-image">
+          <img src="hex2.jpg" alt="Smartphone Z">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Pixel</div>
+          <div class="product-title">Pixel 6a (6GB RAM, 128GB) - Sage Green</div>
+          <div class="rating">★★★★★ <span class="rating-count">(1,845)</span></div>
+          <div class="product-price">₹27,999</div>
+          <div class="special-offer">EMI starts at ₹1,319/month</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 4 -->
+      <div class="product-card">
+        <div class="discount-badge">-32%</div>
+        <div class="prime-tag">Prime</div>
+        <div class="product-image">
+          <img src="hex4.jpg" alt="Smartphone A">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">RedmiNote</div>
+          <div class="product-title">Note 11 Pro+ 5G (8GB RAM, 256GB) - Mirage Blue</div>
+          <div class="rating">★★★★☆ <span class="rating-count">(9,432)</span></div>
+          <div class="product-price">₹19,999 <span class="original-price">₹29,499</span></div>
+          <div class="special-offer">Exchange offer up to ₹5,000</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 5 -->
+      <div class="product-card">
+        <div class="discount-badge">New Launch</div>
+        <div class="product-image">
+          <img src="hex5.jpg" alt="Smartphone B">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">OnePlus</div>
+          <div class="product-title">OnePlus 11R 5G (12GB RAM, 256GB) - Galactic Silver</div>
+          <div class="rating">★★★★★ <span class="rating-count">(746)</span></div>
+          <div class="product-price">₹44,999</div>
+          <div class="special-offer">Launch offer: Free OnePlus Buds</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 6 -->
+      <div class="product-card">
+        <div class="prime-tag">Prime</div>
+        <div class="product-image">
+          <img src="hex6.jpg" alt="Smartphone C">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">iPhony</div>
+          <div class="product-title">iPhony 14 (128GB) - Midnight - With AppleCare+</div>
+          <div class="rating">★★★★★ <span class="rating-count">(12,547)</span></div>
+          <div class="product-price">₹79,900</div>
+          <div class="special-offer">Up to ₹20,000 off with exchange</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 7 -->
+      <div class="product-card">
+        <div class="discount-badge">-15%</div>
+        <div class="product-image">
+          <img src="hex7.jpg" alt="Smartphone D">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Vivo</div>
+          <div class="product-title">Vivo V27 Pro (8GB RAM, 128GB) - Magic Blue</div>
+          <div class="rating">★★★★☆ <span class="rating-count">(3,822)</span></div>
+          <div class="product-price">₹32,999 <span class="original-price">₹38,999</span></div>
+          <div class="special-offer">No-cost EMI available</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
+            
+      <!-- Product 8 -->
+      <div class="product-card">
+        <div class="discount-badge">-22%</div>
+        <div class="prime-tag">Prime</div>
+        <div class="product-image">
+          <img src="hex8.jpg" alt="Smartphone E">
+        </div>
+        <div class="product-info">
+          <div class="product-brand">Samsung</div>
+          <div class="product-title">Samsung Galaxy M53 5G (6GB RAM, 128GB) - Deep Blue</div>
+          <div class="rating">★★★★☆ <span class="rating-count">(5,673)</span></div>
+          <div class="product-price">₹22,999 <span class="original-price">₹29,499</span></div>
+          <div class="special-offer">Extra 5% off with coupons</div>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="buy-now">Buy Now</button>
+        </div>
+      </div>
     </div>
-    
-    <footer>
         
+    <div class="sponsored-products">
+      <h3 class="sponsored-heading">Sponsored Products related to this category</h3>
+      <div class="sponsored-row">
+        <div class="sponsored-item">
+          <img src="Z3.jpg" alt="Accessory 1">
+          <div class="product-title">Premium Tempered Glass Screen Protector</div>
+          <div class="sponsored-price">₹499</div>
+        </div>
+        <div class="sponsored-item">
+          <img src="Z4.jpg" alt="Accessory 2">
+          <div class="product-title">Fast Charging Cable (Type-C)</div>
+          <div class="sponsored-price">₹349</div>
+        </div>
+        <div class="sponsored-item">
+          <img src="Z2.jpg" alt="Accessory 3">
+          <div class="product-title">Designer Phone Case</div>
+          <div class="sponsored-price">₹699</div>
+        </div>
+        <div class="sponsored-item">
+          <img src="Z.jpg" alt="Accessory 4">
+          <div class="product-title">20W Power Adapter</div>
+          <div class="sponsored-price">₹899</div>
+        </div>
+        <div class="sponsored-item">
+          <img src="Z1.jpg" alt="Accessory 5">
+          <div class="product-title">Wireless Earbuds Pro</div>
+          <div class="sponsored-price">₹2,499</div>
+        </div>
+      </div>
+    </div>
+  </main>
+    
+  <div class="back-to-top">
+    THANK-YOU 
+  </div>
+    
+  <footer>
+    <p>&copy; 2025 Amazon Clone. All rights reserved.</p>
+  </footer>
+</body>
+</html>
