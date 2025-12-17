@@ -2,11 +2,12 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "rule-empty-line-before": null,
-    "declaration-empty-line-before": null,
-    "color-function-notation": null,
-    "alpha-value-notation": null,
-    "no-descending-specificity": null
+    "font-family-no-missing-generic-family-keyword": null,
+    "declaration-property-value-no-unknown": null,
+    "function-url-quotes": null,
+    "color-hex-length": null,
+    "color-function-alias-notation": null,
+    "length-zero-no-unit": null
   }
 }
 
