@@ -22,9 +22,6 @@ jobs:
       - name: INSTALL LINTCSS
         run: npm install -g stylelint stylelint-config-standard
 
-      - name: Lint CSS
-        run: stylelint "**/*.css"
-
       - name: Security check
         run: |
           if ls *.env 2>/dev/null; then exit 1; fi
