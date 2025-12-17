@@ -1,26 +1,54 @@
 name: Static Site CI
 
+
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
+  pull_request:
+     branches: ["main"]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Validate HTML files
+      - name: Validate HTML
+        uses: Cyb3r-Jak3/html5validator-action@master
+        with:
+          root: .
+
+      - name: INSTALL LINTCSS
+        run: npm install -g stylelint stylelint-config-standard
+
+      - name: Lint CSS
+        run: stylelint "**/*.css"
+
+      - name: Security check
         run: |
-          echo "Checking HTML files"
-          ls *.html
+          if ls *.env 2>/dev/null; then exit 1; fi
 
-      - name: Validate CSS files
+      - name: CI success
+        run: echo "Indusstry-grade CI passed" 
+      
+      #Bulding (Docker Image)
+      - name: Bulding docker Image
+        run: docker build -t static-site:ci .
+
+
+        #Run  continer
+      - name: Run Continer 
         run: |
-          echo "Checking CSS files"
-          ls *.css
+          docker run -d -p 8080:80 --name test-site static-site:ci
+          sleep 5
 
-      - name: CI completed
-        run: echo "Static site CI passed"
+
+          #Integration Test (HTTP check)
+      - name: Integration Test
+        run: curl -f http://localhost:8080
+
+
+      # Succes signal
+      - name: CI complete
+        run: echo "Indusstry-grade CI Runed"
