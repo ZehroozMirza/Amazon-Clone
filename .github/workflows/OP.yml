@@ -1,30 +1,48 @@
 name: Static Site CI
 
-
 on:
   push:
     branches: ["main"]
   pull_request:
-
+    branches: ["main"]
 
 jobs:
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Validate HTML
         uses: Cyb3r-Jak3/html5validator-action@master
         with:
           root: .
 
-      - name: INSTALL LINTCSS
+      - name: Install CSS linter
         run: npm install -g stylelint stylelint-config-standard
+
+   
 
       - name: Security check
         run: |
-          if ls *.env 2>/dev/null; then exit 1; fi
+          if ls *.env 2>/dev/null; then
+            echo "❌ .env file found"
+            exit 1
+          else
+            echo "✅ No sensitive files"
+          fi
 
-      - name: CI success
-        run: echo "Indusstry-grade CI passed" 
+      - name: Build Docker image
+        run: docker build -t static-site:ci .
+
+      - name: Run container
+        run: |
+          docker run -d -p 8080:80 --name test-site static-site:ci
+          sleep 5
+
+      - name: Integration test
+        run: curl -f http://localhost:8080
+
+      - name: CI completed
+        run: echo "✅ Industry-grade CI completed successfully"
