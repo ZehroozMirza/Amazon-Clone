@@ -1,51 +1,80 @@
-name: Static Site CI
-
+name: CI/CD
 
 on:
   push:
     branches: ["main"]
   pull_request:
-     branches: ["main"]
+    branches: ["main"]
 
 jobs:
+  # =========================
+  # CI JOB
+  # =========================
   ci:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Validate HTML
         uses: Cyb3r-Jak3/html5validator-action@master
         with:
           root: .
 
-      - name: INSTALL LINTCSS
+      - name: Install CSS linter
         run: npm install -g stylelint stylelint-config-standard
+
+      - name: Lint CSS
+        run: stylelint "**/*.css"
 
       - name: Security check
         run: |
-          if ls *.env 2>/dev/null; then exit 1; fi
+          if ls *.env 2>/dev/null; then
+            echo "❌ .env file found"
+            exit 1
+          else
+            echo "✅ No sensitive files"
+          fi
 
-      - name: CI success
-        run: echo "Indusstry-grade CI passed" 
-      
-      #Bulding (Docker Image)
-      - name: Bulding docker Image
+      - name: Build Docker image (CI test build)
         run: docker build -t static-site:ci .
 
-
-        #Run  continer
-      - name: Run Continer 
+      - name: Run container
         run: |
           docker run -d -p 8080:80 --name test-site static-site:ci
           sleep 5
 
-
-          #Integration Test (HTTP check)
-      - name: Integration Test
+      - name: Integration test
         run: curl -f http://localhost:8080
 
+      - name: CI completed
+        run: echo "✅ CI passed successfully"
 
-      # Succes signal
-      - name: CI complete
-        run: echo "Indusstry-grade CI Runed"
+  # =========================
+  # CD JOB
+  # =========================
+  cd:
+    needs: ci
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Login to GitHub Container Registry
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Build Docker image for registry
+        run: |
+          IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+          docker build -t $IMAGE .
+
+      - name: Push Docker image to GHCR
+        run: |
+          IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+          docker push $IMAGE
+
+      - name: CD completed
+        run: echo "🚀 Docker image pushed to GHCR successfully"
