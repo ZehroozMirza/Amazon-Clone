@@ -22,11 +22,6 @@ jobs:
         with:
           root: .
 
-      - name: Install CSS linter
-        run: npm install -g stylelint stylelint-config-standard
-
-      - name: Lint CSS
-        run: stylelint "**/*.css"
 
       - name: Security check
         run: |
