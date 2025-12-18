@@ -63,13 +63,14 @@ jobs:
 
       - name: Build Docker image for registry
         run: |
-          IMAGE=ghcr.io/${{ github.repository }}:${{ github.sha }}
-          docker build -t $IMAGE .
+             IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+             docker build -t $IMAGE .
 
       - name: Push Docker image to GHCR
         run: |
-          IMAGE=ghcr.io/${{ github.repository }}:${{ github.sha }}
-          docker push $IMAGE
+         IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+         docker push $IMAGE
+
 
       - name: CD completed
         run: echo "🚀 Docker image pushed to GHCR"
