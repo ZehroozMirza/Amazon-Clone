@@ -69,12 +69,19 @@ jobs:
           docker push $IMAGE
 
       # 🔐 Azure Login
+     
       - name: Azure Login
         uses: azure/login@v1
         with:
-          client-id: ${{ 8ba80c58-dfdc-4771-b2c3-2b90e3817dc3 }}
-          tenant-id: ${{ 9a6a0a9c-fe46-42a9-80eb-d5048872f6ce }}
-          subscription-id: ${{ 59842674-7540-4d56-8769-2fbd86a14b17 }}
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+
+
+
+
+          
 
       # 🚀 Deploy to Azure Web App (Container)
       - name: Deploy to Azure Web App
