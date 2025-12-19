@@ -3,8 +3,6 @@ name: CI/CD
 on:
   push:
     branches: ["main"]
-  pull_request:
-    branches: ["main"]
 
 jobs:
   # =========================
@@ -21,7 +19,6 @@ jobs:
         uses: Cyb3r-Jak3/html5validator-action@master
         with:
           root: .
-
 
       - name: Security check
         run: |
@@ -47,7 +44,7 @@ jobs:
         run: echo "✅ CI passed successfully"
 
   # =========================
-  # CD JOB
+  # CD JOB (FULLY AUTOMATED)
   # =========================
   cd:
     needs: ci
@@ -61,17 +58,30 @@ jobs:
         run: |
           echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Build Docker image for registry
+      - name: Build Docker image
         run: |
-             IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
-             docker build -t $IMAGE .
+          IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+          docker build -t $IMAGE .
 
       - name: Push Docker image to GHCR
         run: |
-         IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
-         docker push $IMAGE
+          IMAGE=ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
+          docker push $IMAGE
 
+      # 🔐 Azure Login
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ 8ba80c58-dfdc-4771-b2c3-2b90e3817dc3 }}
+          tenant-id: ${{ 9a6a0a9c-fe46-42a9-80eb-d5048872f6ce }}
+          subscription-id: ${{ 59842674-7540-4d56-8769-2fbd86a14b17 }}
+
+      # 🚀 Deploy to Azure Web App (Container)
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v3
+        with:
+          app-name: ${{ secrets.AZURE_WEBAPP_NAME }}
+          images: ghcr.io/zehroozmirza/amazon-clone:${{ github.sha }}
 
       - name: CD completed
-        run: echo "🚀 Docker image pushed to GHCR"
-
+        run: echo "🚀 Deployed to Azure Web App successfully"
